@@ -8,8 +8,6 @@ loadCountry();
 
 const container = document.getElementById("container");
 const call = (c) => {
-  // console.log(c);
-
   c.forEach((country) => {
     const countryDiv = document.createElement("div");
 
@@ -26,6 +24,7 @@ const call = (c) => {
   <button onclick="targetedCountry('${country.name}')
   ">Click To See Flag</button>
   `;
+    //called function in btn dynamically
     container.appendChild(countryDiv);
   });
 };
@@ -38,11 +37,11 @@ const targetedCountry = (cName) => {
   fetch(url)
     .then((res) => res.json())
     .then((data) => display(data[0]));
-  //these informations are in 0 index, 0:{name:"Bangladesh",...}
+  //here in https://restcountries.eu/rest/v2/name/Bangladesh, informations are in 0 index, [0:{name:"Bangladesh",...}]
   console.log(url);
 };
 
-// now display targeted country info
+// now display targeted country info or flag in a targeted  div
 
 const display = (country) => {
   console.log("displaying targeted country in console log:", country);
