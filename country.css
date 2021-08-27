@@ -20,3 +20,13 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
+#flag {
+  text-align: center;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: rgba(23, 202, 32, 0.733);
+
+  border-radius: 20px;
+}
