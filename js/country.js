@@ -8,24 +8,37 @@ loadCountry();
 
 const container = document.getElementById("container");
 const call = (c) => {
-  console.log(c);
+  // console.log(c);
 
   c.forEach((country) => {
     const countryDiv = document.createElement("div");
 
     countryDiv.classList.add("country-s");
-    const name = document.createElement("h2");
-    const capital = document.createElement("p");
-    name.innerText = `Name: ${country.name}
 
-  Capital: ${country.capital}
+    countryDiv.innerHTML = ` <h2>Name: ${country.name}</h2>
 
-  Alpha Code: ${country.alpha2Code}
+  <h3>Capital: ${country.capital}<br><br>
 
+  Alpha Code: ${country.alpha2Code}<br><br>
   Calling Code: ${country.callingCodes} 
+
+  </h3>
+  <button onclick="targetedCountry('${country.name}')
+  ">Click To See Flag</button>
   `;
     container.appendChild(countryDiv);
-    countryDiv.appendChild(name);
-    countryDiv.appendChild(capital);
   });
 };
+
+///targeted Country
+
+const targetedCountry = (cName) => {
+  const url = `https://restcountries.eu/rest/v2/name/${cName}`;
+
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) => console.log(data));
+  console.log(url);
+};
+
+// now display targeted country info
