@@ -1,0 +1,22 @@
+.heading {
+  text-align: center;
+  font-size: 50px;
+  color: black;
+  text-decoration: underline;
+  text-transform: uppercase;
+}
+.country-s {
+  background-color: aquamarine;
+  border: 2px solid gray;
+  border-radius: 20px;
+
+  margin: 30px 10px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 3px 10px 20px gray;
+}
+
+#container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
